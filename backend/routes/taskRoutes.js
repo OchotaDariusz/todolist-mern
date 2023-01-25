@@ -28,4 +28,18 @@ router.route('/').post(async (req, res) => {
     }
 })
 
+router.route('/').delete(async (req, res) => {
+    try {
+        const { taskID } = req.body
+        const taskToRemove = await TodoTaskSchema.findById(taskID)
+        console.log('task to remove: ', taskToRemove)
+        taskToRemove.remove()
+
+        res.status(200).json({ success: true, message: 'Successfully removed a task.' })
+    } catch (err) {
+        console.error(err)
+        res.status(500).json({ success: false, message: 'Cannot remove task, please try again.' })
+    }
+})
+
 export default router
