@@ -1,0 +1,21 @@
+.separator {
+    border-top: 8px solid rgba(187, 187, 187, 1);
+    border-radius: 4px;
+    max-width: 60vw;
+    opacity: 0.3;
+    /*margin-top: 0;*/
+}
+
+.todo-element {
+    color: white;
+    cursor: pointer;
+    padding-bottom: 4px;
+}
+
+.todo-element:hover {
+    background-color: #bbb;
+    opacity: 0.3;
+    margin: auto;
+    max-width: 60vw;
+    border-radius: 4px;
+}
