@@ -1,18 +1,22 @@
 import React from 'react'
 import Typography from '@mui/material/Typography'
+import { getTodos } from "../../utils/utils"
 import './TodoElement.css'
 
-export default function TodoElement({setTodoList, taskName, taskIndex}) {
+export default function TodoElement({setTodoList, taskName, taskID}) {
     const removeElement = () => {
-        setTodoList(prevList => {
-                const newTodoList = []
-                for (let i = 0; i < prevList.length; i++) {
-                    if (i === taskIndex) continue
-                    newTodoList[i] = prevList[i]
-                }
-                return newTodoList
-            }
-        )
+        fetch('http://localhost:8080/api/v1/todos', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                taskID
+            })
+        }).then(() => {
+            getTodos(setTodoList).then(() => console.log('Data fetched.'))
+                .catch(err => console.error(err.message))
+        }).catch(err => console.error(err.message))
     }
 
     return (

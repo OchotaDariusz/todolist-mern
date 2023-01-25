@@ -5,11 +5,11 @@ export default function TodoList({ todoList, setTodoList }) {
 
     return (
         <div>
-            { todoList.map((task, index) => <TodoElement
+            { todoList.map(task => <TodoElement
                 setTodoList={setTodoList}
-                taskName={task}
-                key={index}
-                taskIndex={index}
+                taskName={task.title}
+                key={task._id}
+                taskID={task._id}
             />) }
         </div>
     )
