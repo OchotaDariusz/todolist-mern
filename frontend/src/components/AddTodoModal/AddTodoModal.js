@@ -14,7 +14,7 @@ export default function AddTodoModal({ open, handleClose, setTodoList }) {
     const addNewTodo = e => {
         e.preventDefault()
 
-        fetch('http://localhost:8080/api/v1/todos', {
+        fetch('https://todolist-mern-app.onrender.com/api/v1/todos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

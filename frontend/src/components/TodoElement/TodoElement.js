@@ -5,7 +5,7 @@ import './TodoElement.css'
 
 export default function TodoElement({setTodoList, taskName, taskID}) {
     const removeElement = () => {
-        fetch('http://localhost:8080/api/v1/todos', {
+        fetch('https://todolist-mern-app.onrender.com/api/v1/todos', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
