@@ -1,14 +1,3 @@
 .App {
   text-align: center;
 }
-
-.App-header {
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(24px + 2vmin);
-  font-weight: bold;
-  color: white;
-}
