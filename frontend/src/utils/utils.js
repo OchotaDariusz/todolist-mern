@@ -1,5 +1,5 @@
 export const getTodos = async (setCallback) => {
-    const todos = await fetch('http://localhost:8080/api/v1/todos', {
+    const todos = await fetch('https://todolist-mern-app.onrender.com/api/v1/todos', {
         headers: {
             'Content-Type': 'application/json'
         }

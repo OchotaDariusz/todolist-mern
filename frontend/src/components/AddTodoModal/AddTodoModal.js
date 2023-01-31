@@ -1,20 +1,23 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
-import { getTodos } from "../../utils/utils"
+import CircularProgress from '@mui/material/CircularProgress'
+import {getTodos} from "../../utils/utils"
 import './AddTodoModal.css'
 
-export default function AddTodoModal({ open, handleClose, setTodoList }) {
+export default function AddTodoModal({open, handleClose, setTodoList}) {
     const taskName = useRef()
+    const [isTaskAdding, setIsTaskAdding] = useState(false)
 
     const addNewTodo = e => {
         e.preventDefault()
+        setIsTaskAdding(true)
 
-        fetch('http://localhost:8080/api/v1/todos', {
+        fetch('https://todolist-mern-app.onrender.com/api/v1/todos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -23,6 +26,7 @@ export default function AddTodoModal({ open, handleClose, setTodoList }) {
                 title: taskName.current.value
             })
         }).then(() => {
+            setIsTaskAdding(false)
             getTodos(setTodoList).then(() => {
                 console.log('Data fetched.')
                 handleClose()
@@ -51,7 +55,10 @@ export default function AddTodoModal({ open, handleClose, setTodoList }) {
                             inputRef={taskName}
                         />
                     </div>
-                    <Button variant="contained" type="submit" sx={{my: 2}}>Add</Button>
+                    {
+                        (isTaskAdding) ? <CircularProgress/> :
+                            <Button variant="contained" type="submit" sx={{my: 2}}>Add</Button>
+                    }
                 </Box>
             </Fade>
         </Modal>
