@@ -1,0 +1,21 @@
+@use "./../../sass" as *;
+
+hr {
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 0;
+  }
+}
+
+.todo-element {
+  color: $font-color;
+  cursor: pointer;
+  padding-bottom: 4px;
+
+  &:hover {
+    background-color: #bbb;
+    opacity: 0.3;
+    border-radius: 4px;
+  }
+}

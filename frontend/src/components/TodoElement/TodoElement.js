@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
 import { getTodos } from "../../utils/utils";
-import "./TodoElement.css";
+import "./TodoElement.scss";
 
 export default function TodoElement({ setTodoList, taskName, taskID }) {
   const [isTaskRemoving, setIsTaskRemoving] = useState(false);

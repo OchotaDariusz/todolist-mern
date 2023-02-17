@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./Card.scss";
 
 function Card({ className, children }) {
   const classes = "card " + className;

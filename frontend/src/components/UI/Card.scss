@@ -1,0 +1,11 @@
+@use "./../../sass" as *;
+
+.card {
+  @include bg-color(0.7, 0.9);
+  @include rounded-card-shadow;
+
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 70rem;
+  max-width: 95%;
+}
