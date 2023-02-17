@@ -4,7 +4,7 @@ import TodoList from "./components/TodoList/TodoList";
 import Card from "./components/UI/Card";
 import AddTodoButton from "./components/AddTodoButton/AddTodoButton";
 import { getTodos } from "./utils/utils";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [todoList, setTodoList] = useState([]);

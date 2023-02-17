@@ -1,0 +1,12 @@
+@mixin bg-color($opacity1, $opacity2) {
+  background: linear-gradient(
+    135deg,
+    rgba(157, 107, 107, $opacity1) 35%,
+    rgba(75, 75, 105, $opacity2) 100%
+  );
+}
+
+@mixin rounded-card-shadow {
+  box-shadow: 0 1px 18px rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+}
